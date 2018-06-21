@@ -1,0 +1,4 @@
+﻿  lab2_1.cpp
+c:\users\pavilion\desktop\лабы 2 сем\программирование\lab2\lab2_1\lab2_1\lab2_1.cpp(15): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+c:\users\pavilion\desktop\лабы 2 сем\программирование\lab2\lab2_1\lab2_1\lab2_1.cpp(31): warning C4715: getInt: значение возвращается не при всех путях выполнения
+  lab2_1.vcxproj -> C:\Users\Pavilion\Desktop\Лабы 2 сем\Программирование\lab2\lab2_1\Debug\lab2_1.exe

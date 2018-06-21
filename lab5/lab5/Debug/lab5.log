@@ -1,0 +1,6 @@
+﻿  lab5.cpp
+c:\users\pavilion\desktop\лабы 2 сем\программирование\lab5\lab5\lab5.cpp(26): warning C4091: typedef : пропускается слева от "degree", когда ни одна переменная не объявлена
+c:\users\pavilion\desktop\лабы 2 сем\программирование\lab5\lab5\lab5.cpp(31): warning C4013: malloc: нет определения; предполагается "extern" с возвратом типа "int"
+c:\users\pavilion\desktop\лабы 2 сем\программирование\lab5\lab5\lab5.cpp(44): warning C4133: =: несовместимые типы - из "dergree *" в "degree *"
+c:\users\pavilion\desktop\лабы 2 сем\программирование\lab5\lab5\lab5.cpp(42): warning C4101: p: неиспользованная локальная переменная
+  lab5.vcxproj -> C:\Users\Pavilion\Desktop\Лабы 2 сем\Программирование\lab5\Debug\lab5.exe

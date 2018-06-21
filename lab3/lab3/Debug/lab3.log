@@ -1,0 +1,3 @@
+﻿  lab3.cpp
+c:\users\pavilion\desktop\лабы 2 сем\программирование\lab3\lab3\lab3.cpp(110): warning C4013: getch: нет определения; предполагается "extern" с возвратом типа "int"
+  lab3.vcxproj -> C:\Users\Pavilion\Desktop\Лабы 2 сем\Программирование\lab3\Debug\lab3.exe

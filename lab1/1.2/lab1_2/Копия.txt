@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include <windows.h>
+
+
+int main()
+{
+	int k = 0, result = 0;
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	while (k < 1 || k > 900)
+	{
+		printf("Введите номер числа из последовательности : ");
+		scanf("%d", &k);
+	}
+
+	result = k + 99;
+
+	printf("Это число : %d\n", result);
+
+    return 0;
+}

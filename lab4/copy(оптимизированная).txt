@@ -1,0 +1,97 @@
+#include "stdafx.h"
+#include <string.h>
+#include <windows.h>
+
+char transLetters(char *str)
+{
+	for (int i = 0; i < strlen(str); i++)
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = tolower(str[i]);
+
+		else if (str[i] >= 'А' && str[i] <= 'Я')
+			str[i] += ('а' - 'А');
+	}
+
+	return str;
+}
+
+void search(char *str1, char *str2)
+{
+	int max = 0, max_i = 0;
+
+	int **mass = (int**)malloc(sizeof(int*)*strlen(str1));
+	for (int i = 0; i < strlen(str1); i++)
+		mass[i] = (int*)malloc(sizeof(int)*strlen(str2));
+
+	for (int i = 0; i < strlen(str1); i++)
+		for (int j = 0; j < strlen(str2); j++)
+			mass[i][j] = 0;
+
+	//Нахождение одинаковых элементов, если они равны, то в ячейку массива записывается 1
+	for (int i = 0; i < strlen(str1); i++)
+		if (str1[i] != '.' && str1[i] != '!' && str1[i] != '?' && str1[i] != ',' && str1[i] != ' ' && str1[i] != '\0')
+			for (int j = 0; j < strlen(str2); j++)
+				if (str1[i] == str2[j])
+					mass[i][j] = 1;
+
+	//Нахождение подстрок
+	for (int i = 0; i < strlen(str1); i++)
+		for (int j = 0; j < strlen(str2); j++)
+			if (j != strlen(str2) - 1)
+				if (mass[i][j] > 0 && mass[i + 1][j + 1] > 0)
+					mass[i + 1][j + 1] = mass[i][j] + 1;
+
+	//Нахождение последней координаты самой длинной подстроки
+	max = mass[0][0];
+	for (int i = 0; i < strlen(str1); i++)
+	{
+		for (int j = 0; j < strlen(str2); j++)
+		{
+			if (mass[i][j] > max)
+			{
+				max = mass[i][j];
+				max_i = i;
+			}
+		}
+	}
+	
+	//Вывод ответа
+
+	if (max == 0)
+		printf("There are no substrings.");
+
+	else
+	{
+		printf("The largest substring : ");
+		for (int i = max_i - max + 1; i <= max_i; i++)
+			printf("%c", str1[i]);
+	}
+
+	printf("\n");
+
+	free(mass);
+}
+
+int main()
+{
+	char str1[100], str2[100];
+	int counter = 0;
+
+	system("color 0A");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	printf("Enter the first line : ");
+	gets(str1);
+	transLetters(str1);
+
+	printf("Enter the second line : ");
+	gets(str2);
+	transLetters(str2);
+
+	search(str1, str2);
+
+	return 0;
+}
+
